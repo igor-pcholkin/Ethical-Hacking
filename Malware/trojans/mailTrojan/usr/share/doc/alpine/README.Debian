@@ -1,0 +1,57 @@
+This file provides notes for users of the Alpine package.
+
+== Sending email ==
+
+By default, alpine doesn't know how to send email.  If your system is
+configured with a working local mail transport agent, you can configure
+PINE to do SMTP to localhost by pressing these keys:
+
+M (Main screen)
+S (Setup)
+C (Configuration)
+
+Navigate to the smtp-server entry, press enter, and type "localhost".  Press enter again.
+
+E (Exit setup)
+Y ("Yes" replaces settings)
+
+System administrators may want to set smtp-server in the /etc/pinerc.
+
+== Maildir ==
+
+The package for pine in Debian provides a patch to let it read
+Maildir-style mail boxes.  This package does not yet provide that
+functionality.  I am looking for a moderately good solution for this,
+as per Debian bug #405762.
+
+== Passfile ==
+
+The washington.edu developers of Alpine and Pine have a feature they
+implemented but don't like called "passfile".  This lets users store
+their passwords in a file so they don't have to type it each time they
+run the mail program.  This feature is similar to "Save password"
+features in Thunderbird, Icedove, Evolution, and other mail user
+agents that are or have been in Debian.
+
+In this package, the file ~/.pine-passfile is where Alpine stores its
+obfuscated password.
+
+NOTE: If you save your password here, and someone else can get a copy
+of this file, then that person has your password!
+
+== Bugs ==
+
+If you have problems with this package and are using Debian, please
+submit a bug using the Debian bug reporting system.  The easiest way
+to do this is to use the program "reportbug" as packaged in Debian.
+
+If you are using a Debian-derived distribution, you may have a
+modified package.  For example, if you are using Ubuntu, and the
+alpine package version number contains the word "ubuntu" in it, then
+it is probably modified.  Modified packages' bugs should be submitted
+with the bug tracker of the group that did the modifying.
+
+But if you have an unmodified package, even running on a non-Debian
+system, it should be okay to file bugs against the Debian bug tracker.
+Information on how to do that is available at
+http://www.debian.org/Bugs/Reporting - see the "Example" section.
